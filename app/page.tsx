@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import Reveal from "@/components/reveal"
@@ -79,20 +80,47 @@ function Proof() {
           </p>
         </Reveal>
 
-        <Reveal className="mt-6 rounded-xl border bg-card p-4 md:p-6">
-          <div className="aspect-[16/9] w-full rounded-md bg-muted grid place-items-center">
-            <span className="text-xs text-muted-foreground">Embed benchmark chart (from tweet)</span>
+        <Reveal className="mt-6">
+          <div className="w-full flex justify-center">
+            <blockquote className="twitter-tweet" data-theme="dark" data-width="500" data-dnt="true" data-align="center">
+              <a href="https://twitter.com/sachdh/status/1947541485530046589?ref_src=twsrc%5Etfw">Loading tweet...</a>
+            </blockquote>
           </div>
+          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button asChild size="sm">
               <Link href="#">View Full Benchmarks</Link>
             </Button>
+            
             <Button asChild size="sm" variant="secondary">
-              <Link href="https://huggingface.co/PhysicsWallahAI/Aryabhata-1.0">Model Card</Link>
+              <Link href="https://huggingface.co/PhysicsWallahAI/Aryabhata-1.0" target="_blank" rel="noopener noreferrer">
+                Model Card ↗
+              </Link>
             </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="https://arxiv.org/html/2508.08665v1">Research Paper</Link>
-            </Button>
+
+            {/* Research Paper Modal */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="sm" variant="secondary">Research Paper</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden border-border/60 bg-card/95 backdrop-blur-sm">
+                <div className="rounded-xl border border-border/30 bg-card/80 m-4 overflow-hidden shadow-2xl">
+                  <DialogHeader className="p-6 border-b border-border/30 bg-card/60">
+                    <DialogTitle className="text-xl font-semibold text-foreground">
+                      Research Paper - ArXiv
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="w-full h-[75vh] bg-background/50">
+                    <iframe
+                      src="https://arxiv.org/html/2508.08665v1"
+                      className="w-full h-full border-0"
+                      title="Aryabhata Research Paper"
+                      style={{ backgroundColor: 'transparent' }}
+                    />
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </Reveal>
 
@@ -260,8 +288,12 @@ function Founder() {
                 aria-hidden="true"
               />
               <div className="relative rounded-xl border bg-card p-6">
-                <div className="aspect-[4/3] w-full rounded-md bg-muted grid place-items-center mb-4">
-                  <span className="text-xs text-muted-foreground">Photo of Sachin Dharashivkar</span>
+                <div className="aspect-[4/3] w-full rounded-lg bg-muted overflow-hidden mb-4 ring-1 ring-border/40 shadow-lg">
+                  <img 
+                    src="https://pbs.twimg.com/profile_images/1660878487232876544/LjtlZ44B_400x400.jpg" 
+                    alt="Photo of Sachin Dharashivkar, CEO & Founder" 
+                    className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
                 <p className="text-sm text-muted-foreground">
                   A decade of RL and simulation engineering across finance, gaming, and research.
@@ -279,8 +311,8 @@ function Resources() {
   const resources = [
     { title: "Aryabhata Model Card - Technical Specifications", href: "https://huggingface.co/PhysicsWallahAI/Aryabhata-1.0" },
     { title: "ArXiv Paper - Research & Methodology", href: "https://arxiv.org/html/2508.08665v1" },
-    { title: "Lossfunk Talk 1 - Advanced RL Training Techniques", href: "#" },
-    { title: "Lossfunk Talk 2 - Building Domain-Specific Models", href: "#" },
+    { title: "Lossfunk Talk 1 - Advanced RL Training Techniques", href: "https://www.youtube.com/watch?v=ur6gi9S1ZJw" },
+    { title: "Lossfunk Talk 2 - Building Domain-Specific Models", href: "https://www.youtube.com/watch?v=GqsDcV6kCOc" },
   ]
   return (
     <section className="relative">
@@ -293,18 +325,18 @@ function Resources() {
             </div>
             <ul className="divide-y">
               {resources.map((r, idx) => (
-                <MotionLi key={r.href} index={idx} className="group flex items-center justify-between px-5 py-4">
+                <MotionLi key={r.href} index={idx} className="group">
                   <a
-                    className="text-sm transition-colors hover:text-sky-400 link-underline"
+                    className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:text-sky-400 w-full"
                     href={r.href}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {r.title}
+                    <span className="link-underline">{r.title}</span>
+                    <span className="text-xs text-muted-foreground transition-transform group-hover:translate-x-0.5">
+                      Visit →
+                    </span>
                   </a>
-                  <span className="text-xs text-muted-foreground transition-transform group-hover:translate-x-0.5">
-                    Visit →
-                  </span>
                 </MotionLi>
               ))}
             </ul>
