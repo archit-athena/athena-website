@@ -42,7 +42,7 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-6xl px-8 py-20 md:py-28">
         <Reveal className="flex flex-col gap-4 text-center">
           <h1 className="text-balance text-4xl font-semibold md:text-6xl">
-            Build AI Agents That Actually Work in Production
+            Train AI Agents That Actually Work in Production
           </h1>
           <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             We deliver specialized, compact LLMs through reinforcement learning—outperforming frontier models at a
