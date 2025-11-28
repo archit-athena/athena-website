@@ -70,15 +70,10 @@ export default function SiteHeader() {
             <Link href="#use-cases" className="text-muted-foreground hover:text-foreground link-underline">
               Use Cases
             </Link>
-            <Link href="#enterprise" className="text-muted-foreground hover:text-foreground link-underline">
-              Enterprise
-            </Link>
             <Link href="#founder" className="text-muted-foreground hover:text-foreground link-underline">
               Founder
             </Link>
-            <Link href="/blog" className="text-muted-foreground hover:text-foreground link-underline">
-              Blog
-            </Link>
+
           </nav>
         </div>
       </div>
