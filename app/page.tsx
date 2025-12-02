@@ -82,11 +82,12 @@ function Proof() {
 
         <Reveal className="mt-6">
           <div className="w-full flex justify-center">
-            <blockquote className="twitter-tweet" data-theme="dark" data-width="500" data-dnt="true" data-align="center">
-              <a href="https://twitter.com/sachdh/status/1947541485530046589?ref_src=twsrc%5Etfw">Loading tweet...</a>
-            </blockquote>
+            <img
+              src="/aryabhata-tweet.png"
+              alt="Twitter post by Sachin announcing Aryabhata 1.0 - AI model scoring 90.2% on JEE Mains, outperforming o4 mini and Gemini Flash 2.5"
+              className="max-w-2xl w-full rounded-lg border border-border/40 shadow-lg"
+            />
           </div>
-          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button asChild size="sm">
               <Link href="#">View Full Benchmarks</Link>
