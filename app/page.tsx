@@ -57,7 +57,7 @@ function Hero() {
               <Link href="https://cal.com/sachdh/15min">Book a Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="#proof">View Benchmarks</Link>
+              <Link href="https://x.com/sachdh/status/1947541485530046589">View Benchmarks</Link>
             </Button>
           </div>
         </Reveal>
