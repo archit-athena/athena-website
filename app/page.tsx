@@ -89,7 +89,7 @@ function Proof() {
           <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button asChild size="sm">
-              <Link href="#">View Full Benchmarks</Link>
+              <Link href="https://x.com/sachdh/status/1947541485530046589" target="_blank" rel="noopener noreferrer">View Full Benchmarks</Link>
             </Button>
             
             <Button asChild size="sm" variant="secondary">
@@ -272,10 +272,10 @@ function Founder() {
               </ul>
               <div className="flex gap-3">
                 <Button asChild>
-                  <Link href="#">Watch Technical Talks</Link>
+                  <Link href="https://www.youtube.com/watch?v=ur6gi9S1ZJw" target="_blank" rel="noopener noreferrer">Watch Technical Talks</Link>
                 </Button>
                 <Button asChild variant="secondary">
-                  <Link href="#">Read Our Research</Link>
+                  <Link href="https://arxiv.org/html/2508.08665v1" target="_blank" rel="noopener noreferrer">Read Our Research</Link>
                 </Button>
               </div>
             </div>
@@ -370,11 +370,12 @@ function TechnicalDeepDive() {
           </ul>
           <div className="mt-4 flex gap-3">
             <Button asChild>
-              <Link href="#">Download Technical Whitepaper</Link>
+              <Link href="https://arxiv.org/html/2508.08665v1" target="_blank" rel="noopener noreferrer">Download Technical Whitepaper</Link>
             </Button>
-            <Button asChild variant="secondary">
+            {/* GitHub repository coming soon */}
+            {/* <Button asChild variant="secondary">
               <Link href="#">View GitHub</Link>
-            </Button>
+            </Button> */}
           </div>
         </MotionContainer>
       </div>
